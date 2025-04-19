@@ -11,6 +11,14 @@ public class Banco {
    private static List<Cliente> listaClientes = new ArrayList<>();
    private static List<Empresa> listaEmpresas = new ArrayList<>();
 
+   public static int getID_BANCO(){
+      return ID_BANCO;
+   }
+
+   public static String getNombre() {
+      return NOMBRE;
+   }
+
    public static void agregarEmpleado(Empleado empleado) {
       listaEmpleados.add(empleado);
    }
@@ -61,5 +69,9 @@ public class Banco {
 
    public static List<Empresa> getListaEmpresas() {
       return listaEmpresas;
+   }
+
+   public static List<CuentaBancaria> getListaCuentas() {
+      return listaCuentas;
    }
 }
