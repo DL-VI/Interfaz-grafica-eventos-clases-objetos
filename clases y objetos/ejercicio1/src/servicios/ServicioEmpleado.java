@@ -1,8 +1,8 @@
-package com.banco.servicios;
+package servicios;
 
-import com.banco.modelo.Banco;
-import com.banco.modelo.Empleado;
-import com.banco.modelo.enums.Puesto;
+import modelo.Banco;
+import modelo.Empleado;
+import modelo.enums.Puesto;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;

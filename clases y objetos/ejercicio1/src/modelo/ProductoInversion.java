@@ -1,6 +1,6 @@
-package com.banco.modelo;
+package modelo;
 
-import com.banco.modelo.enums.NivelRiesgo;
+import modelo.enums.NivelRiesgo;
 
 public class ProductoInversion {
     private static int contadorProducos = 0;

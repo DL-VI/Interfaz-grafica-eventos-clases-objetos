@@ -1,7 +1,7 @@
-package com.banco.servicios;
+package servicios;
 
-import com.banco.modelo.Banco;
-import com.banco.modelo.Cliente;
+import modelo.Banco;
+import modelo.Cliente;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;

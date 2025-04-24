@@ -1,9 +1,9 @@
-package com.banco.servicios;
+package servicios;
 
-import com.banco.modelo.Banco;
-import com.banco.modelo.Empresa;
-import com.banco.modelo.ProductoInversion;
-import com.banco.modelo.enums.NivelRiesgo;
+import modelo.Banco;
+import modelo.Empresa;
+import modelo.ProductoInversion;
+import modelo.enums.NivelRiesgo;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;

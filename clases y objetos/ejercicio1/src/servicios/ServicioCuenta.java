@@ -1,6 +1,6 @@
-package com.banco.servicios;
+package servicios;
 
-import com.banco.modelo.*;
+import modelo.*;
 
 import java.util.List;
 import java.util.Scanner;

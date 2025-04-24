@@ -1,6 +1,6 @@
-package com.banco.modelo;
+package modelo;
 
-import com.banco.modelo.enums.Puesto;
+import modelo.enums.Puesto;
 
 import java.time.LocalDate;
 import java.time.Period;

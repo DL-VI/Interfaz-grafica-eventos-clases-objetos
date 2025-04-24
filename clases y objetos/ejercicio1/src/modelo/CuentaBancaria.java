@@ -1,4 +1,4 @@
-package com.banco.modelo;
+package modelo;
 
 public class CuentaBancaria {
    private static int contadorCuentas = 0;

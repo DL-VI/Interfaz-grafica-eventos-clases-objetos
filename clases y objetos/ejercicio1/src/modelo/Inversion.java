@@ -1,4 +1,4 @@
-package com.banco.modelo;
+package modelo;
 
 public class Inversion {
     private static int contadorInversiones = 0;

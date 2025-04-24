@@ -1,6 +1,6 @@
-package com.banco.servicios;
+package servicios;
 
-import com.banco.modelo.Banco;
+import modelo.Banco;
 
 import java.util.Scanner;
 

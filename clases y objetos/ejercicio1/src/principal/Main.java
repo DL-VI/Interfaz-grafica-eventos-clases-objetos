@@ -1,9 +1,9 @@
-package com.banco.principal;
+package principal;
 
-import com.banco.servicios.ServicioBanco;
-import com.banco.servicios.ServicioCliente;
-import com.banco.servicios.ServicioEmpleado;
-import com.banco.servicios.ServicioEmpresa;
+import servicios.ServicioBanco;
+import servicios.ServicioCliente;
+import servicios.ServicioEmpleado;
+import servicios.ServicioEmpresa;
 
 import java.util.Scanner;
 

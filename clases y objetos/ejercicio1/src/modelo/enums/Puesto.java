@@ -1,4 +1,4 @@
-package com.banco.modelo.enums;
+package modelo.enums;
 
 public enum Puesto {
    Cajero(1200000f),
