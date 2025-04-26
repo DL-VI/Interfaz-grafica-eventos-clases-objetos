@@ -1,20 +1,16 @@
 package servicio;
 
-import modelo.Banco;
-import modelo.Cliente;
+import modelo.BancoPrincipal;
 import modelo.ClienteBanco;
-import servicios.ServicioCuenta;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class ServicioClientes {
    private Scanner sc;
-   private Cliente clienteTemp;
-   private ServicioCuenta servCuenta;
 
    public ServicioClientes() {
       this.sc = new Scanner(System.in);
-      servCuenta = new ServicioCuenta();
    }
 
    public void menuSerivicioCliente() {
@@ -41,11 +37,11 @@ public class ServicioClientes {
 
                System.out.println("\nLista de clientes:");
                System.out.println("{\n");
-               Banco.getListaClientes().forEach(System.out::println);
+               BancoPrincipal.clientes.forEach(System.out::println);
                System.out.println("}");
             }
             case 3 -> seleccionar();
-            default -> System.out.println("Opcion incorrecta.");
+            default -> System.out.println("\nOpcion incorrecta.");
          }
       } while (opcion != 0);
    }
@@ -53,10 +49,47 @@ public class ServicioClientes {
    private void registrarCliente() {
       String nombre, identificacion;
 
-      System.out.print("Numero de identididad: ");
+      System.out.print("\nNumero de identididad: ");
       identificacion = sc.nextLine();
-      System.out.print("\nNombre del cliente: ");
+      System.out.print("Nombre del cliente: ");
       nombre = sc.nextLine();
       System.out.println("\nCliente registrado {\n" + new ClienteBanco(identificacion, nombre) + "}");
+   }
+
+   private boolean listar() {
+      if (BancoPrincipal.clientes.isEmpty()) {
+         System.out.println("\nNo hay clientes registrados.");
+         return false;
+      }
+      return true;
+   }
+
+   private void seleccionar() {
+      if (!listar()) return;
+
+      System.out.println("\nLista de clientes:");
+      System.out.println("{\n");
+      BancoPrincipal.clientes.forEach(System.out::println);
+      System.out.println("}");
+
+      System.out.print("\nIngrese el idcliente: ");
+      long id = sc.nextInt();
+
+      int indice = obtenerIndice(id);
+
+      if (indice == -1) {
+         System.out.println("\nEl id del cliente no existe.");
+         return;
+      }
+      ClienteBanco clienteTemp = BancoPrincipal.clientes.get(indice);
+      System.out.println("\nAcabas de seleccionar al cliente: " + clienteTemp.getNombre());
+      new ServicioCuenta(clienteTemp).menuServicioCuenta();
+   }
+
+   private int obtenerIndice(long id) {
+      return IntStream.range(0, BancoPrincipal.clientes.size())
+         .filter(indice -> BancoPrincipal.clientes.get(indice).getIdCliente() == id)
+         .findFirst()
+         .orElse(-1);
    }
 }
